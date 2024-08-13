@@ -1,10 +1,10 @@
-import {lazy} from "react";
-import { Navigate } from "react-router-dom";
+import { lazy } from "react";
+import { Navigate, RouteObject } from 'react-router-dom';
 
-const HelloWorld = lazy(() => import('../views/HelloWorld.tsx'))
+const HelloWorld = lazy(() => import('@/views/HelloWorld.tsx'))
 
-const routes = [
-    { path: '/', element: <Navigate to='/home' /> },
+const routes: RouteObject[] = [
+    { path: '/', element: <Navigate to="/home" /> },
     { path: '/home', element: <HelloWorld />}
 ]
 

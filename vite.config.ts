@@ -12,7 +12,7 @@ export default defineConfig(( { mode }) => {
     // 配置路径别名
     resolve: {
       alias: {
-        "@": resolve(__dirname, "src")
+        "@": resolve(__dirname, "./src")
       }
     },
     server: {
