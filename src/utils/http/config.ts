@@ -1,7 +1,7 @@
-import type { AxiosError } from 'axios'
+import type { AxiosError } from 'axios';
 
 // 以下这些code需要重新登录
-const reloadCodes: number[] = [401, 1011007, 1011008]
+const reloadCodes: number[] = [ 401, 1011007, 1011008 ];
 
 const requestConfig = {
   // TokenName // Authorization
@@ -11,8 +11,8 @@ const requestConfig = {
   // 请求是否开启缓存
   REQUEST_CACHE: true,
   // 追加其他头
-  HEADERS: {},
-}
+  HEADERS: {}
+};
 
 const errorCodeMap: { [key: number]: string } = {
   400: '发出的请求有错误，服务器没有进行新建或修改数据的操作。',
@@ -25,18 +25,18 @@ const errorCodeMap: { [key: number]: string } = {
   500: '服务器发生错误，请检查服务器。',
   502: '网关错误。',
   503: '服务不可用，服务器暂时过载或维护。',
-  504: '网关超时。',
-}
+  504: '网关超时。'
+};
 function handlerError(error: AxiosError) {
-  const status = error.response && error.response.status
-  const description = status && errorCodeMap[status]
+  const status = error.response && error.response.status;
+  const description = status && errorCodeMap[status];
   // TODO 消息提示
   // message.error(`${description}`, { duration: 3000 });
-  console.log('=>(config.ts:35) description', description)
+  console.log('=>(config.ts:35) description', description);
 }
 
 export {
   requestConfig,
   reloadCodes,
-  handlerError,
-}
+  handlerError
+};
