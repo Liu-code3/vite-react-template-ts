@@ -48,12 +48,13 @@ const sessionCache = new Cache(CacheType.session)
 
 export { localCache, sessionCache }
 
-function isValidJSON(data: string): boolean {
+function isValidJSON(data: string) {
   try {
     JSON.parse(data)
     return true
   }
   catch (err) {
-    return false
+    if (err)
+      return false
   }
 }
